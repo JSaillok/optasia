@@ -1,0 +1,11 @@
+version: '3.8'
+
+services:
+  spark:
+    build: .
+    volumes:
+      - ./data:/data
+    command: >
+      /opt/bitnami/spark/bin/spark-submit
+      --master local[*]
+      /scripts/spark_etl.py
